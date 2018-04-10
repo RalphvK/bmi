@@ -1,0 +1,172 @@
+body {
+    min-height: 100vh;
+    margin: 0 0;
+    padding: 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #111;
+}
+
+/* general classes */
+.gradient-main {
+    background: #A1FFCE;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4568DC, #B06AB3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4568DC, #B06AB3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+[v-cloak] {display: none !important;}
+
+/* background */
+#background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: -webkit-linear-gradient(to right, rgba(69,104,220,0.3), rgba(176,106,179,0.3));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(69,104,220,0.3), rgba(176,106,179,0.3)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#background > svg {
+    height: 100vh;
+    position: absolute;
+    right: 0;
+}
+
+/* app window */
+#app {
+    position: relative;
+    z-index: 99;
+    max-width: 600px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13), 0 3px 6px rgba(0,0,0,0.13);
+    border-radius: 8px;
+}
+#app > .container {
+    padding-top: 50px;
+    padding-bottom: 0px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 8px 8px 0px 0px;
+}
+#app .row {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* title row */
+#row-title h1 {
+    font-weight: 300;
+}
+#row-title hr {
+    border: 1px solid #0000FF;
+    margin-top: 0rem;
+    margin-bottom: 0.75rem;
+}
+#row-title h4 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* input row */
+#row-input {
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+#row-input .form-group {
+    border-radius: 999px;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.05), 0 0px 20px rgba(0,0,0,0.05);
+}
+#row-input input {
+    border: none;
+    border-right: 1px solid rgba(206,212,218,0.3);
+    border-left: 1px solid rgba(206,212,218,0.3);
+}
+#row-input .input-group-prepend .input-group-text {
+    width: 100px;
+    background-color: white;
+    border-radius: 999px 0 0 999px;
+    padding-left: 23px;
+    border: none;
+}
+#row-input select {
+    border-radius: 0 999px 999px 0;
+    width: 100px;
+    border: none;
+}
+
+/* result panel */
+#row-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 0 0 8px 8px;
+    color: white;
+    opacity: 0.8;
+    margin: 0 0;
+}
+#row-result .col:last-child {
+    flex-grow: 0;
+    font-size: 2.3em;
+}
+#row-result .title {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+/* mobile */
+@media all and (max-width: 575.99px) {
+    
+    /* removing flex from body (moves #app to top */
+    body {
+        display: block;
+    }
+
+    /*  removing border radius & shadow */
+    #app {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    #app > .container {
+        border-radius: 0;
+    }
+    #row-result {
+        border-radius: 0;
+    }
+
+    /* removing extra padding from rows */
+    #app .row {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    /* adding padding back for results row */
+    #row-result .col {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    /* making app window flex */
+    #app {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    #app > * {
+        flex: 1;
+    }
+    #app > .container {
+        display: flex;
+        flex-direction: column;
+    }
+    #row-title {
+        flex: 1;
+    }
+    #row-input {
+        flex: 1;
+    }
+
+}
