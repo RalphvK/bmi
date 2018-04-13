@@ -169,4 +169,12 @@ body {
         flex: 1;
     }
 
+    /* flat background */
+    #background svg {
+        display: none;
+    }
+    #background {
+        background: #AAA8E2;
+    }
+
 }
